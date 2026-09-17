@@ -1,26 +1,20 @@
 ﻿namespace Polimorfismo
 {
-    internal class Program
     class Program
     {
         static void Main(string[] args)
         {
-            Geometria geometria = new Geometria();
-            Gerente gerente = new Gerente();
-            gerente.Nome = "Carlos";
-            gerente.Salario = 8000;
+            List<Animal> animais = [];
 
-            Desenvolvedor desenvolvedor = new Desenvolvedor();
-            desenvolvedor.Nome = "Ana";
-            desenvolvedor.Salario = 6000;
+            animais.Add(new Animal());
+            animais.Add(new Leao());
+            animais.Add(new Macaco());
+            animais.Add(new Cobra());
 
-            Console.WriteLine($"Funcionário: {gerente.Nome}");
-            Console.WriteLine($"Salário: R$ {gerente.Salario:F2}");
-            Console.WriteLine($"Bônus Anual: R$ {gerente.CalcularBonusAnual():F2}");
-
-            Console.WriteLine($"Funcionário: {desenvolvedor.Nome}");
-            Console.WriteLine($"Salário: R$ {desenvolvedor.Salario:F2}");
-            Console.WriteLine($"Bônus Anual: R$ {desenvolvedor.CalcularBonusAnual():F2}");
+            foreach (Animal animal in animais)
+            {
+                animal.EmitirSom();
+            }
         }
     }
 }

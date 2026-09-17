@@ -1,0 +1,60 @@
+﻿Animal.cs
+
+namespace Polimorfismo
+{
+    public class Animal
+    {
+        public virtual void EmitirSom()
+        {
+            Console.WriteLine("Som genérico de animal...");
+        }
+    }
+
+    public class Leao : Animal
+    {
+        public override void EmitirSom()
+        {
+            Console.WriteLine("ROAR!");
+        }
+    }
+
+    public class Macaco : Animal
+    {
+        public override void EmitirSom()
+        {
+            Console.WriteLine("UGH UGH AAH AAH!");
+        }
+    }
+
+    public class Cobra : Animal
+    {
+        public override void EmitirSom()
+        {
+            Console.WriteLine("SSSSSSS...");
+        }
+    }
+}
+
+
+Program.cs
+
+namespace Polimorfismo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Animal> animais = [];
+
+            animais.Add(new Animal());
+            animais.Add(new Leao());
+            animais.Add(new Macaco());
+            animais.Add(new Cobra());
+
+            foreach (Animal animal in animais)
+            {
+                animal.EmitirSom();
+            }
+        }
+    }
+}

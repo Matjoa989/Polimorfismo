@@ -4,16 +4,15 @@
     {
         static void Main(string[] args)
         {
-            List<Animal> animais = [];
+            List<INotificacao> Notificacoes = [];
 
-            animais.Add(new Animal());
-            animais.Add(new Leao());
-            animais.Add(new Macaco());
-            animais.Add(new Cobra());
+            Notificacoes.Add(new NotificacaoEmail());
+            Notificacoes.Add(new NotificacaoPush());
+            Notificacoes.Add(new NotificacaoSMS());
 
-            foreach (Animal animal in animais)
+            foreach (INotificacao notificacao in Notificacoes)
             {
-                animal.EmitirSom();
+                notificacao.Enviar();
             }
         }
     }
